@@ -1,13 +1,9 @@
 package Calculation;
 import javax.swing.*;
-import java.awt.*;
 
-public class NumberButton {
-	int X, Y;
-	int WIDTH, HEIGHT;
-	Font NumberFont;
-	Color BG_COLOR = Color.WHITE;
-	Font numberFont = new Font("NewellsHand",Font.PLAIN, 30) ;
+
+public class NumberButton extends Button {
+	
 	JButton One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Zero;
 	JButton Buttons[] = {Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine};
 
@@ -23,13 +19,5 @@ public class NumberButton {
 		}
 	}
 	
-	public void setNumberButton(int x, int y, int width, int height) {
-		X = x;
-		Y = y;
-		WIDTH = width;
-		HEIGHT = height;
-		for(JButton button : Buttons) {
-			button.setBounds(X,Y, WIDTH, HEIGHT);
-		}
-	}
+	
 }
