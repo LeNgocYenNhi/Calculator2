@@ -7,13 +7,15 @@ public class Processor{
 	ShowResultField ResultArea;
 	HistoryField HistoryArea;
 	SymbolTable SymTable;
+	Menu menu;
 
-	Processor(CalculatingPanel _CalPanel, SymbolTable _SymTable,
-			  ShowResultField _ResultArea, HistoryField _HisArea){
+	Processor(CalculatingPanel _CalPanel, SymbolTable _SymTable, ShowResultField _ResultArea,
+		  	HistoryField _HisArea,Menu menu){
 		this.CalPanel = _CalPanel;
 		this.SymTable = _SymTable;
 		this.ResultArea = _ResultArea;
 		this.HistoryArea = _HisArea;
+		this.menu = menu;
 	}
 
 	public void Implement(ActionEvent e){
@@ -33,7 +35,7 @@ public class Processor{
 			CalPanel.setText(CalPanel.getText().concat("e"));
 			CalPanel.setValue(Math.E);
 		}
-		//concat nối thêm chuỗi cố định vào cuối chuỗi đã cho
+		
 		if(e.getSource() == SymTable.operButton.pi) {
 			CalPanel.setText(CalPanel.getText().concat(e.getActionCommand()));
 			CalPanel.setValue(Math.PI);
@@ -54,11 +56,16 @@ public class Processor{
 		}
 
 		if(e.getSource() == SymTable.operButton.sqrt) {
+			if(CalPanel.getGlobalValue() < 0) {
+				CalPanel.EndExpression = true;
+				CalPanel.setText("Invalid input");
+				CalPanel.resetValue();
+			}else {
 			double result = Math.sqrt(CalPanel.getGlobalValue());
-			CalPanel.setValue(result);
 			CalPanel.resetValue();
-			CalPanel.setText("sqrt(" + CalPanel.getText() + ")");
+			CalPanel.setText("\u221A" + CalPanel.getText());
 			CalPanel.setValue(result);
+			}
 		}
 		
 		if(e.getSource() == SymTable.operButton.sqr) {
@@ -70,17 +77,31 @@ public class Processor{
 			// ResultArea.Panel.setText(String.valueOf(result));
 		}
 		if(e.getSource() == SymTable.operButton.ln) {
+			if(CalPanel.getGlobalValue() <=0) {
+				CalPanel.EndExpression = true;
+				CalPanel.setText("Invalid input");
+				CalPanel.resetValue();
+			}else {
 			double result = Math.log(CalPanel.getGlobalValue());
 			CalPanel.setText("ln(" + CalPanel.getText() + ")");
 			CalPanel.resetValue();
 			CalPanel.setValue(result);	
+			}
 		}
+		
 		if(e.getSource() == SymTable.operButton.log) {
+			if(CalPanel.getGlobalValue() <=0) {
+				CalPanel.EndExpression = true;
+				CalPanel.setText("Invalid input");
+				CalPanel.resetValue();
+			}else {
 			double result = Math.log10(CalPanel.getGlobalValue());
 			CalPanel.setText("log(" + CalPanel.getText() + ")");
 			CalPanel.resetValue();
 			CalPanel.setValue(result);	
+			}
 		}
+		
 		
 		if(e.getSource() == SymTable.operButton.sin) {
 			double result = Math.sin(CalPanel.getGlobalValue());
@@ -126,6 +147,12 @@ public class Processor{
 			CalPanel.setValue((int) CalPanel.getValue() / 10);
 		}
 		
+		if(e.getSource() == SymTable.operButton.neg) {
+			double result = (-1) *(CalPanel.getGlobalValue());
+			CalPanel.setText("\u00B1"+ CalPanel.getText());
+			CalPanel.resetValue();
+			CalPanel.setValue(result);	
+		}
 
 		if(e.getSource() == SymTable.operButton.pow10) {
 			CalPanel.setValue(Math.pow(10, CalPanel.getGlobalValue()));
@@ -166,7 +193,7 @@ public class Processor{
 		if(e.getSource() == SymTable.operButton.div) {
 			CalPanel.sign[CalPanel.nValues] = '/';
 			CalPanel.nValues += 1;
-			CalPanel.setText(CalPanel.getText() + " / ");
+			CalPanel.setText(CalPanel.getText() + " \u00F7 ");
 		}
 
 		if(e.getSource() == SymTable.operButton.equ) {
