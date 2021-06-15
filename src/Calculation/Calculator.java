@@ -9,28 +9,32 @@ public class Calculator{
 	HistoryField HistoryArea = new HistoryField();
 	SymbolTable SymTable = new SymbolTable();
 	StandardSymbolTable StdSymTable = new StandardSymbolTable();
-	Processor Processor = new Processor(CalPanel, SymTable, ResultArea, HistoryArea);
+	Menu Menu = new Menu();
+	Processor Processor = new Processor(CalPanel, SymTable, ResultArea, HistoryArea, Menu);
 
 	public Calculator() {}
 	
 	public CalculatingPanel getCalculatingPanel() {
-        return CalPanel;
-    }
+       	 	return CalPanel;
+    	}
 	public ShowResultField getShowResultField() {
-        return ResultArea;
-    }
+        	return ResultArea;
+    	}
 	public HistoryField getHistoryField() {
-        return HistoryArea;
-    }
+        	return HistoryArea;
+    	}
 	public SymbolTable getSymbolTable() {
-        return SymTable;
-    }
+        	return SymTable;
+    	}
 	public StandardSymbolTable getStdSymbolTable() {
-        return StdSymTable;
-    }
+        	return StdSymTable;
+    	}
 	public Processor getProcessor() {
-        return Processor;
-    }
+        	return Processor;
+    	}
+	public Menu getMenu() {
+		return Menu;
+	}
 	
 	public JFrame getFrame() {
 		return frame;
