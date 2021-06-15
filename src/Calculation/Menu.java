@@ -1,6 +1,5 @@
 package Calculation;
 
-import java.awt.*;
 import javax.swing.*;
 
 public class Menu extends Panel {
