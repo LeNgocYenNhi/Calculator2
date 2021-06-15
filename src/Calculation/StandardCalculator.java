@@ -77,7 +77,7 @@ public class StandardCalculator extends Calculator implements ActionListener {
 		if(e.getSource() == SymTable.operButton.div) {
 			CalPanel.sign[CalPanel.nValues] = '/';
 			CalPanel.nValues += 1;
-			CalPanel.setText(CalPanel.getText() + " / ");
+			CalPanel.setText(CalPanel.getText() + " \u00F7 ");
 		}
 		if(e.getSource() == SymTable.operButton.equ) {
 			CalPanel.setText(String.valueOf(CalPanel.getGlobalValue()));
