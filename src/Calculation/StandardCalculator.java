@@ -84,6 +84,12 @@ public class StandardCalculator extends Calculator implements ActionListener {
 			CalPanel.resetValue();
 			CalPanel.EndExpression = true;
 		}
+		if(e.getSource() == SymTable.operButton.neg) {
+			double result = (-1) *(CalPanel.getGlobalValue());
+			CalPanel.setText("\u00B1 "+ CalPanel.getText());
+			CalPanel.resetValue();
+			CalPanel.setValue(result);	
+		}
 
 		if(e.getSource() == SymTable.operButton.sqrt) {
 			double result = Math.sqrt(CalPanel.getGlobalValue());
