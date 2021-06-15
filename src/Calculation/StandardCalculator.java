@@ -80,14 +80,14 @@ public class StandardCalculator extends Calculator implements ActionListener {
 			CalPanel.setText(CalPanel.getText() + " / ");
 		}
 		if(e.getSource() == SymTable.operButton.equ) {
-			CalPanel.setText("= " + String.valueOf(CalPanel.getGlobalValue()));
+			CalPanel.setText(String.valueOf(CalPanel.getGlobalValue()));
 			CalPanel.resetValue();
 			CalPanel.EndExpression = true;
 		}
 
 		if(e.getSource() == SymTable.operButton.sqrt) {
 			double result = Math.sqrt(CalPanel.getGlobalValue());
-			CalPanel.setText(" = " + String.valueOf(result));
+			CalPanel.setText(String.valueOf(result));
 			CalPanel.resetValue();
 			CalPanel.EndExpression = true;
 		}
