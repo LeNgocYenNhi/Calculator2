@@ -11,7 +11,6 @@ public class StandardCalculator extends Calculator implements ActionListener {
 	protected Processor Processor;
 
 	public StandardCalculator() {	
-		super();
 		CalPanel = getCalculatingPanel();
 		SymTable = getStdSymbolTable();
 		Processor = getProcessor();
