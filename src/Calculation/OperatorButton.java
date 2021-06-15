@@ -1,8 +1,7 @@
 package Calculation;
 import javax.swing.*;
-import java.awt.*;
 
-public class OperatorButton {
+public class OperatorButton extends Button{
 
 	JButton add = new JButton(), sub = new JButton(), mul = new JButton(), div = new JButton();
 	JButton dot = new JButton(), equ = new JButton(), del = new JButton(), clr = new JButton();
@@ -18,14 +17,8 @@ public class OperatorButton {
 		pow, fac, e, pi, ln, log, pow10, round, equ
 	};
 	
-	int X, Y;
-	int WIDTH, HEIGHT;
-	Font NumberFont;
-	Color BG_COLOR = Color.WHITE;
-	Font operFont = new Font("NewellsHand", Font.PLAIN, 30) ;
-
-	OperatorButton(){
-		super();
+	
+	public OperatorButton(){
 		createOperatorButton();
 	}
 
@@ -34,8 +27,8 @@ public class OperatorButton {
 
 		add.setText("+");
 		sub.setText("-");
-		mul.setText("*");
-		div.setIcon(new ImageIcon(path + "/images/div.png"));
+		mul.setText("\u00D7");
+		div.setText("\u00F7");
 		dot.setText(".");
 		mod.setText("mod");
 		sin.setText("sin");
@@ -46,29 +39,29 @@ public class OperatorButton {
 		e.setText("e");
 		pi.setText("\u03C0");
 		sqr.setIcon(new ImageIcon(path + "/images/sqr.png"));
-		sqrt.setIcon(new ImageIcon(path + "/images/sqrt.png"));
+		sqrt.setText("\u221A");
 		abs.setIcon(new ImageIcon(path + "/images/abs.png"));
 		fac.setText("n!");
 		round.setText("x");
 		abs.setIcon(new ImageIcon(path + "/images/abs.png"));
 		clr.setIcon(new ImageIcon(path + "/images/clear.png"));
-		neg.setText("+/_");
+		neg.setText("\u00B1");
 		ln.setText("ln");
 		log.setText("log");
 		pow10.setText("x^10");
 		del.setIcon(new ImageIcon(path + "/images/delete.png"));
 		equ.setText("="); 
 
-		for(int i = 0; i < Buttons.length; i++) {
-			Buttons[i].setBackground(BG_COLOR);
-			Buttons[i].setFont(operFont);
+		for(JButton operButton : Buttons) {
+			operButton.setBackground(getBG_COLOR());
+			operButton.setFont(getFont());
 		}
 	}
 
 	public void setOperatorButton() {
-		for(int i = 0; i < Buttons.length; i++) {
-			Buttons[i].setBackground(BG_COLOR);
-			Buttons[i].setFont(operFont);
+		for(JButton operButton : Buttons) {
+			operButton.setBackground(getBG_COLOR());
+			operButton.setFont(getFont());
 		}
 	}
     
