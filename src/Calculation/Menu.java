@@ -35,6 +35,10 @@ public class Menu extends Panel {
     public void addItem(JMenu Menu,  JMenuItem menuItem) {
     	  Menu.add(menuItem);
     }
+    @Override
+    public void setBounds(int x, int y, int Width, int Height) {
+    	this.menuBar.setBounds(x, y, Width, Height);
+    }
     public JMenuBar getMenuBar() {
 	  return menuBar;
     }
