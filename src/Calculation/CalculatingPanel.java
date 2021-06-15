@@ -1,7 +1,7 @@
 package Calculation;
 import javax.swing.*;
 import java.awt.*;
-import java.text.DecimalFormat;
+
 
 public class CalculatingPanel {
 
@@ -13,9 +13,16 @@ public class CalculatingPanel {
 	boolean EndExpression = false;
 
 	CalculatingPanel(){
-		this.Panel.setBackground(BG_COLOR);
+		this.Panel.setBackground(getBG_COLOR());
 		this.Panel.setBounds(10, 50, 1440, 90);
 		this.Panel.setFont(new Font("NewellsHand", Font.PLAIN, 10));
+	}
+	
+	public Color getBG_COLOR() {
+		return BG_COLOR;
+	}
+	public void setBG_COLOR(Color bG_COLOR) {
+		BG_COLOR = bG_COLOR;
 	}
 
 	public JTextArea getPanel(){
@@ -113,9 +120,7 @@ public class CalculatingPanel {
 				result -= this.Values[i + 1];
 			}
 		}
-
-		DecimalFormat df = new DecimalFormat("#.##");      
-		result = Double.valueOf(df.format(result));
+		result = (double) Math.round(result * 1000000000) / 1000000000;
 		return result;
 	}
 
@@ -128,8 +133,5 @@ public class CalculatingPanel {
 		return true;
 	}
 
-	public void show(){
-		
-	}
 
 }
