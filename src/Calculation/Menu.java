@@ -23,7 +23,6 @@ public class Menu extends Panel {
         	}
     	
     	}
-  
     public void creatMenuItem() {
         addItem(Calculator, Standard);
         addItem(Calculator, Scientific);
@@ -33,23 +32,13 @@ public class Menu extends Panel {
         	_menuItem.addActionListener(menuItemListener);
         }
     }
-  
     public void addItem(JMenu Menu,  JMenuItem menuItem) {
     	  Menu.add(menuItem);
     }
-  
-    public void setBounds(int x, int y, int Width, int Height) {
-    	  this.menuBar.setBounds(x, y, Width, Height);
+    public JMenuBar getMenuBar() {
+	  return menuBar;
     }
-  
-	  public JMenuBar getMenuBar() {
-		    return menuBar;
-	  }
-	  public void setMenuBar(JMenuBar menuBar) {
-		    this.menuBar = menuBar;
-	  }
-	  public void setFont(Font f) {
-		    this.menuBar.setFont(f);
-	  }
-   
+    public void setMenuBar(JMenuBar menuBar) {
+	  this.menuBar = menuBar;
+    }   
 }
