@@ -2,51 +2,19 @@ package Calculation;
 
 import java.awt.*;
 
+public class CalculatingPanel extends Panel{
 
-public class CalculatingPanel {
-
-	private JTextArea Panel = new JTextArea();
-	private Color BG_COLOR = Color.WHITE;
+	
 	private double Values[] = new double[100];
 	char sign[] = new char[100];
 	int nValues = 0;
 	boolean EndExpression = false;
 
+	
 	CalculatingPanel(){
 		this.Panel.setBackground(getBG_COLOR());
 		this.Panel.setBounds(10, 50, 1440, 90);
 		this.Panel.setFont(new Font("NewellsHand", Font.PLAIN, 10));
-	}
-	
-	public Color getBG_COLOR() {
-		return BG_COLOR;
-	}
-	public void setBG_COLOR(Color bG_COLOR) {
-		BG_COLOR = bG_COLOR;
-	}
-
-	public JTextArea getPanel(){
-		return this.Panel;
-	}
-
-	public void setBackgroundColor(Color c){
-		this.Panel.setBackground(c);
-	}
-
-	public void setBounds(int x, int y, int width, int height){
-		this.Panel.setBounds(x, y, width, height);
-	}
-
-	public void setText(String text){
-		this.Panel.setText(text);
-	}
-
-	public String getText(){
-		return this.Panel.getText();
-	}
-
-	public void setFont(Font f){
-		this.Panel.setFont(f);
 	}
 
 	public void setValue(double value){
