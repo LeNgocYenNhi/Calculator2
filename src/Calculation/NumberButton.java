@@ -14,7 +14,7 @@ public class NumberButton extends Button {
 	public void creatNumberButton() {
 		for(int i = 0; i < 10; i++) {
 			Buttons[i] = new JButton(Integer.toString(i));
-			Buttons[i].setBackground(BG_COLOR);
+			Buttons[i].setBackground(getBG_COLOR());
 			Buttons[i].setFont(numberFont);
 		}
 	}
