@@ -5,8 +5,8 @@ import javax.swing.*;
 public class Menu extends Panel {
 	JMenuBar menuBar = new JMenuBar();
 	JMenu Calculator = new JMenu("Calculator"), Convert = new JMenu("Convert"), Setting = new JMenu("Setting");
-	JMenuItem Standard = new JMenuItem("Standard"), Scientific = new JMenuItem("Scientific"), Length = new JMenuItem("Length"), Weight = new JMenuItem("Weight");
-	JMenuItem menuItem [] = {Standard, Scientific, Length, Weight};
+	JMenuItem Standard = new JMenuItem("Standard"), Scientific = new JMenuItem("Scientific"), Length = new JMenuItem("Length"), Weight = new JMenuItem("Weight"), Font = new JMenuItem("Font");
+	JMenuItem menuItem [] = {Standard, Scientific, Length, Weight, Font};
 	JMenu Menu[] = {Calculator, Convert, Setting};
 
 	MenuItemListener menuItemListener = new MenuItemListener();
@@ -27,6 +27,7 @@ public class Menu extends Panel {
         addItem(Calculator, Scientific);
         addItem(Convert, Length);
         addItem(Convert, Weight);
+	addItem(Setting, Font);
         for(JMenuItem _menuItem : menuItem) {
         	_menuItem.addActionListener(menuItemListener);
         }
