@@ -17,7 +17,6 @@ public class OperatorButton extends Button{
 		pow, fac, e, pi, ln, log, pow10, round, equ
 	};
 	
-	
 	public OperatorButton(){
 		createOperatorButton();
 	}
