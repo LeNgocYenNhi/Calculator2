@@ -13,7 +13,7 @@ public class CalculatingPanel extends Panel{
 	
 	CalculatingPanel(){
 		this.Panel.setBackground(getBG_COLOR());
-		this.Panel.setBounds(10, 50, 1440, 90);
+		this.Panel.setBounds(10, 50, 700, 110);
 		this.Panel.setFont(new Font("NewellsHand", Font.PLAIN, 10));
 	}
 
