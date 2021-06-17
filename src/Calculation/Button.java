@@ -7,7 +7,7 @@ public class Button {
 	private int X, Y;
 	private int WIDTH, HEIGHT;
 	private Color BG_COLOR = Color.WHITE;
-	private Font operFont = new Font("NewellsHand", Font.PLAIN, 30) ;
+	private Font _Font = new Font("NewellsHand", Font.PLAIN, 30) ;
 	
 	public Button() {
 		
@@ -42,11 +42,11 @@ public class Button {
 	public int getY() {
 		return Y;
 	}
-	public void setFont(Font operFont) {
-		this.operFont= operFont;
+	public void setFont(Font _Font) {
+		this._Font= _Font;
 	}
 	public Font getFont() {
-		return operFont;
+		return this._Font;
 	}
 	
 }
