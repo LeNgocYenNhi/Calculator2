@@ -12,6 +12,7 @@ public class ScienceCalculator extends Calculator implements ActionListener{
 	protected SymbolTable SymTable;
 	protected Processor Processor;
 	protected Menu menu;
+	protected Font font = FontChooser.showDialog((Component)null, "Font");
 
 	public ScienceCalculator() {
 		CalPanel = getCalculatingPanel();
@@ -31,24 +32,16 @@ public class ScienceCalculator extends Calculator implements ActionListener{
 		Menu.setFont(new Font("NewellsHand", Font.PLAIN, 30));
 		frame.add(Menu.getMenuBar());
 		
-		CalPanel.setBounds(10, 50, 700, 110);
-		CalPanel.setFont(new Font("NewellsHand", Font.PLAIN, 30));
 		frame.add(CalPanel.getPanel());
 		
-		ResultArea.Panel.setBounds(10,170,700,110);
-		ResultArea.Panel.setFont(new Font("NewellsHand", Font.PLAIN, 30));
 		frame.add(ResultArea.Panel);
 		
-		HistoryArea.setBounds(720,50, 350, 655);
-		HistoryArea.setFont(new Font("NewellsHand", Font.PLAIN, 30));
+		HistoryArea.setFont(font);
 		frame.add(HistoryArea.getPanel());
-		
-		SymTable.Panel.setBounds(10,300,700,400);	
-		SymTable.Panel.setLayout(new GridLayout(7,5,1,1));
 
 		for (JButton button : SymTable.numButton.Buttons){
             		button.addActionListener(this);
-       		 }
+       		}
         
         	for (JButton button : SymTable.operButton.Buttons){
            		 button.addActionListener(this);
