@@ -9,7 +9,7 @@ public class StandardSymbolTable extends SymbolTable {
 		}
 		@Override
 		public void creatSymbolTable() {
-			Panel.setBounds(10,400,1440,600);
+			Panel.setBounds(7,160,400,340);
 			Panel.setLayout(new GridLayout(5,5,1,1));
 
 			Panel.add(operButton.sqrt);
