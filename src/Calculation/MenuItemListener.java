@@ -17,6 +17,9 @@ public class MenuItemListener implements ActionListener {
         if(e.getActionCommand() == "Weight") {
           	new Weight();
         }
+        if(e.getActionCommand() == "Font") {
+        	FontChooser.showDialog((Component)null, "Font");
+        }
 
     }
 }
