@@ -21,11 +21,7 @@ public class StandardCalculator extends Calculator implements ActionListener {
 		frame.setLayout(null);
 		
 		CalPanel.setBounds(5,15,400,140);
-		CalPanel.setFont(new Font("NewellsHand", Font.PLAIN, 30));
 		frame.add(CalPanel.getPanel());
-		
-		SymTable.setBounds(7,160,400,340);
-		SymTable.setLayout(new GridLayout(5,4,1,1));
 		
 		for (JButton button : SymTable.numButton.Buttons){
             		button.addActionListener(this);
@@ -40,7 +36,7 @@ public class StandardCalculator extends Calculator implements ActionListener {
 	}
 
   	public void actionPerformed(ActionEvent e) {
-		Processor.Implement(e);
+		//Processor.Implement(e);
 		
 		if (CalPanel.EndExpression == true){
 			CalPanel.EndExpression = false;
