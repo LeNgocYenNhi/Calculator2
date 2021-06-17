@@ -10,9 +10,12 @@ public class Calculator{
 	SymbolTable SymTable = new SymbolTable();
 	StandardSymbolTable StdSymTable = new StandardSymbolTable();
 	Menu Menu = new Menu();
+	Panel Panel = new Panel();
 	Processor Processor = new Processor(CalPanel, SymTable, ResultArea, HistoryArea, Menu);
 
-	public Calculator() {}
+	public Calculator() {
+		
+	}
 	
 	public CalculatingPanel getCalculatingPanel() {
        	 	return CalPanel;
@@ -34,6 +37,9 @@ public class Calculator{
     	}
 	public Menu getMenu() {
 		return Menu;
+	}
+	public Panel getPanel() {
+		return Panel;
 	}
 	
 	public JFrame getFrame() {
