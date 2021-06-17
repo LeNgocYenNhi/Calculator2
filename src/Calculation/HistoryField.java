@@ -9,7 +9,7 @@ public class HistoryField extends Panel{
 	private List<String> list = new ArrayList<String>();  
 	
 	public HistoryField (){
-		
+		this.Panel.setBounds(720,50, 350, 655);	
 	}
 	
 	public List<String> getList() {
