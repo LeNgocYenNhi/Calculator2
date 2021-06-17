@@ -2,13 +2,13 @@ package Calculation;
 
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.JTextArea;
 
 public class Panel {
 	private int X, Y;
 	private int WIDTH, HEIGHT;
 	private Color BG_COLOR = Color.WHITE;
+	private Font _Font =  new Font("NewellsHand", Font.PLAIN, 30);
 	JTextArea Panel = new JTextArea();
 	public Panel() {
 		
@@ -46,6 +46,9 @@ public class Panel {
 	}
 	public void setFont(Font f){
 		  this.Panel.setFont(f);
+	}
+	public Font getFont() {
+		return _Font;
 	}
 
 	public void setText(String text){
