@@ -34,6 +34,12 @@ public class ScienceCalculator extends Calculator implements ActionListener{
 		
 		frame.add(CalPanel.getPanel());
 		
+		SymTable.modeButton.rad.setBounds(10,280,100,20);
+		frame.add(SymTable.modeButton.rad);
+		
+		SymTable.modeButton.deg.setBounds(120,280,100,20);
+		frame.add(SymTable.modeButton.deg);
+		
 		frame.add(ResultArea.Panel);
 		
 		HistoryArea.setFont(font);
@@ -46,6 +52,9 @@ public class ScienceCalculator extends Calculator implements ActionListener{
         	for (JButton button : SymTable.operButton.Buttons){
            		 button.addActionListener(this);
         	}
+		for(JRadioButton button : SymTable.modeButton.Buttons) {
+			button.addActionListener(this);
+		}
 		frame.add(SymTable.Panel);
 
 		frame.setVisible(true);
