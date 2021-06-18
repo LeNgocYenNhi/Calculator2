@@ -197,6 +197,11 @@ public class Processor{
 			CalPanel.nValues += 1;
 			CalPanel.setText("(" + CalPanel.getText() + ")^");
 		}
+		if(e.getSource() == SymTable.operButton.nCk) {
+			CalPanel.sign[CalPanel.nValues] = 'C';
+			CalPanel.nValues += 1;
+			CalPanel.setText(CalPanel.getText() + "C");
+		}
 
 		if(e.getSource() == SymTable.operButton.round) {
 			double result = Math.round(CalPanel.getGlobalValue());
