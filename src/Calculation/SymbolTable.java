@@ -6,6 +6,7 @@ import java.awt.*;
 public class SymbolTable{
 	NumberButton numButton = new NumberButton();
 	OperatorButton operButton = new OperatorButton();
+	ModeButton modeButton = new ModeButton();
 	JPanel Panel = new JPanel();
 	public SymbolTable(){
 		creatSymbolTable();
