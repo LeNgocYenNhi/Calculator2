@@ -23,6 +23,35 @@ public class Processor{
 			CalPanel.EndExpression = false;
 			CalPanel.setText("");
 		}
+		
+		if(SymTable.modeButton.rad.isSelected()) {
+			if(e.getSource() == SymTable.operButton.sin) {
+				double result = Math.sin(CalPanel.getGlobalValue());
+				CalPanel.resetValue();
+				CalPanel.setText("sin(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+				
+			}
+
+			if(e.getSource() == SymTable.operButton.cos) {
+				double result = Math.cos(CalPanel.getGlobalValue());
+				CalPanel.resetValue();
+				CalPanel.setText("cos(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+			}
+			if(e.getSource() == SymTable.operButton.tan) {
+				double result = Math.tan(CalPanel.getGlobalValue());
+				CalPanel.resetValue();
+				CalPanel.setText("tan(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+			}
+			if(e.getSource() == SymTable.operButton.cot) {
+				double result = 1.0 / Math.tan(CalPanel.getGlobalValue());
+				CalPanel.resetValue();
+				CalPanel.setText("cot(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+			}
+		}
 
 		for(int i = 0; i < 10; i++) {
 			if(e.getSource() == SymTable.numButton.Buttons[i]) {
@@ -103,32 +132,35 @@ public class Processor{
 		}
 		
 		
-		if(e.getSource() == SymTable.operButton.sin) {
-			double result = Math.sin(CalPanel.getGlobalValue());
-			CalPanel.resetValue();
-			CalPanel.setText("sin(" + CalPanel.getText() + ")");
-			CalPanel.setValue(result);
-			// ResultArea.Panel.setText("sin("+ String.valueOf(num) + ") " + "=");
-		}
+		if(SymTable.modeButton.deg.isSelected()) {
+			if(e.getSource() == SymTable.operButton.sin) {
+				double result = Math.sin(CalPanel.getGlobalValue() * Math.PI / 180);
+				CalPanel.resetValue();
+				CalPanel.setText("sin(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+			
+			}
 
-		if(e.getSource() == SymTable.operButton.cos) {
-			double result = Math.cos(CalPanel.getGlobalValue());
-			CalPanel.resetValue();
-			CalPanel.setText("cos(" + CalPanel.getText() + ")");
-			CalPanel.setValue(result);
+			if(e.getSource() == SymTable.operButton.cos) {
+				double result = Math.cos(CalPanel.getGlobalValue()  * Math.PI / 180 );
+				CalPanel.resetValue();
+				CalPanel.setText("cos(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+			}
+			if(e.getSource() == SymTable.operButton.tan) {
+				double result = Math.tan(CalPanel.getGlobalValue() * Math.PI / 180);
+				CalPanel.resetValue();
+				CalPanel.setText("tan(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+			}
+			if(e.getSource() == SymTable.operButton.cot) {
+				double result = 1.0 / Math.tan(CalPanel.getGlobalValue()  * Math.PI / 180);
+				CalPanel.resetValue();
+				CalPanel.setText("cot(" + CalPanel.getText() + ")");
+				CalPanel.setValue(result);
+			}
 		}
-		if(e.getSource() == SymTable.operButton.tan) {
-			double result = Math.tan(CalPanel.getGlobalValue());
-			CalPanel.resetValue();
-			CalPanel.setText("tan(" + CalPanel.getText() + ")");
-			CalPanel.setValue(result);
-		}
-		if(e.getSource() == SymTable.operButton.cot) {
-			double result = 1.0 / Math.tan(CalPanel.getGlobalValue());
-			CalPanel.resetValue();
-			CalPanel.setText("cot(" + CalPanel.getText() + ")");
-			CalPanel.setValue(result);
-		}
+		
 		if(e.getSource() == SymTable.operButton.fac) {
 			if ((int) CalPanel.getValue() != (int) CalPanel.getGlobalValue()){
 				CalPanel.EndExpression = true;
