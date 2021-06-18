@@ -54,6 +54,14 @@ public class CalculatingPanel extends Panel{
 				this.sign[i] = '*';
 			}
 		}
+		for (int i = 0; i < nValues; i++) {
+			if (sign[i] == 'C'){
+				double value = factorial((int) this.Values[i]) / (factorial((int) this.Values[i+1]) * factorial((int) (this.Values[i] - this.Values[i+1])));
+				this.Values[i] = value;
+				this.Values[i + 1] = 1;
+				this.sign[i] = 'C';
+			}
+		}
 
 		for (int i = 0; i < nValues; i++) {
 			if (sign[i] == '*'){
@@ -99,6 +107,16 @@ public class CalculatingPanel extends Panel{
 
 	boolean ValidateExpression(String expression){
 		return true;
+	}
+	public double factorial(int number) {
+		double result = 1;
+		if (number >= 0) {
+			for(int i = 1; i <= number; i++) {
+				result *= i;
+			}
+		return result;
+		}
+		return -1;
 	}
 
 
