@@ -10,14 +10,12 @@ public class Weight extends Convertor implements ActionListener{
 	protected ConvertingPanel CalPanel;
 	protected InputField Input;
 	protected OutputField Output;
-	protected ShowResultField ResultArea;
 	JComboBox toBox, fromBox;
 	String sign;
 	double temp, result;
 	public Weight() {
 		CalPanel = getConvertingPanel();
 		SymTable = getConvertSymbolTable();
-		ResultArea = getShowResultField();
 		Panel = getPanel();
 		Input = getInputField();
 		Output = getOutputField();
@@ -27,41 +25,38 @@ public class Weight extends Convertor implements ActionListener{
 		frame.setSize(850, 600);
 		frame.setLayout(null);
 		
-	    Input.getPanel().setBounds(10, 110, 400, 50);
+	   	Input.getPanel().setBounds(10, 115, 275, 55);
 		Input.getPanel().setFont(new Font("NewellsHand", Font.PLAIN, 30));
 		Input.setText("");
 		frame.add(Input.Panel);
 		
-		Output.getPanel().setBounds(10, 260, 400, 50);
+		Output.getPanel().setBounds(10, 275, 275, 55);
 		Output.getPanel().setFont(new Font("NewellsHand",Font.PLAIN, 30));
 		Output.setText("");
 		frame.add(Output.Panel);
 	
-		String []  item = {"Kilograms", "Grams", "Pounds"};
+		String []  item = {"Kilograms","Grams", "Decigrams","Centigrams","Miligrams","Tonnes", "Pounds"};
 		fromBox = new JComboBox(item);
-		fromBox.setSelectedIndex(2);
+		fromBox.setSelectedIndex(1);
 		fromBox.addActionListener(this);
-        fromBox.setBounds(10,50,150,50);
-        frame.add(fromBox);
+        	fromBox.setBounds(10,50,150,50);
+        	frame.add(fromBox);
 		
        
 		toBox = new JComboBox(item);
 		toBox.addActionListener(this);
-        toBox.setBounds(10,200,150,50);
-
-        frame.add(toBox);
+        	toBox.setBounds(285,275,100,55);
+        	frame.add(toBox);
         
 		
-        SymTable.setBounds(435,10,390,540);
+        	SymTable.setBounds(435,10,390,540);
 		SymTable.setLayout(new GridLayout(4,3,1,1));
 		
-		ResultArea.getPanel().setBounds(10,315,417,233);
-		ResultArea.getPanel().setFont(new Font("NewellsHand", Font.PLAIN, 30));
-		frame.add(ResultArea.Panel);
+		
 		
 		for (JButton button : SymTable.numButton.Buttons){
-            button.addActionListener(this);
-        }
+            		button.addActionListener(this);
+       		}		
 		SymTable.operButton.dot.addActionListener(this);
 		SymTable.operButton.del.addActionListener(this);
 		
@@ -98,6 +93,18 @@ public class Weight extends Convertor implements ActionListener{
 			case "Grams":
 				medium = temp / 1000;
 				break;
+			case "Decigrams":
+				medium = temp * 0.0001;
+				break;
+			case "Centigrams":
+				medium = temp * 0.00001;
+				break;
+			case "Miligrams":
+				medium = temp * 0.000001;
+				break;
+			case "Tonnes":
+				medium = temp * 1000;
+				break;
 			case "Pounds":
 				medium = temp * 0.453592;
 			}
@@ -105,9 +112,20 @@ public class Weight extends Convertor implements ActionListener{
 			case "Kilograms":
 				result = medium;
 				break;
-			
 			case "Grams":
 				result = medium * 1000;
+				break;
+			case "Decigrams":
+				result =  medium * 10000;
+				break;
+			case "Centigrams":
+				result =  medium* 100000;
+				break;
+			case "Miligrams":
+				result =  medium * 1000000;
+				break;
+			case "Tonnes":
+				result =  medium * 0.001;
 				break;
 			case "Pounds":
 				result = medium * 2.204623;
