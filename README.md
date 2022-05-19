@@ -1,6 +1,7 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+• GUI calculator in Java
+• Provide standard and scientific calculator as well as set converters between various units of measurement (Length, Area, Volume, Speed, Temperature)
 
 ## Folder Structure
 
